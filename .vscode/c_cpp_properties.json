@@ -4,7 +4,6 @@
 			"name": "Win32",
 			"includePath": [
 				"${workspaceFolder}/node_modules/node-addon-api",
-				"${workspaceFolder}/vendor/opus/include",
 				"${workspaceFolder}/vendor/rtaudio",
 				"C:/Users/${env:username}/.node-gyp/**"
 			],
@@ -15,7 +14,6 @@
 			"name": "Mac",
 			"includePath": [
 				"${workspaceFolder}/node_modules/node-addon-api",
-				"${workspaceFolder}/vendor/opus/include",
 				"${workspaceFolder}/vendor/rtaudio",
 				"/usr/local/include/node",
 				"${env:HOME}/.node-gyp/**"
@@ -27,7 +25,6 @@
 			"name": "Linux",
 			"includePath": [
 				"${workspaceFolder}/node_modules/node-addon-api",
-				"${workspaceFolder}/vendor/opus/include",
 				"${workspaceFolder}/vendor/rtaudio",
 				"/usr/include/node",
 				"${env:HOME}/.node-gyp/**"

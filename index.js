@@ -1,11 +1,5 @@
 const rawAudify = require("bindings")("audify");
 
-const OpusApplication = {
-	OPUS_APPLICATION_VOIP: 2048,
-	OPUS_APPLICATION_AUDIO: 2049,
-	OPUS_APPLICATION_RESTRICTED_LOWDELAY: 2051
-};
-
 const RtAudioApi = {
 	UNSPECIFIED: 0,
 	MACOSX_CORE: 1,
@@ -51,4 +45,4 @@ const RtAudioErrorType = {
 	THREAD_ERROR: 10,
 };
 
-exports = module.exports = { ...rawAudify, OpusApplication, RtAudioApi, RtAudioFormat, RtAudioStreamFlags, RtAudioErrorType };
+exports = module.exports = { ...rawAudify, RtAudioApi, RtAudioFormat, RtAudioStreamFlags, RtAudioErrorType };
