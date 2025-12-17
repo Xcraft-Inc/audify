@@ -9,7 +9,7 @@ IF(DEFINED napi_build_version)
     add_definitions(-DNAPI_VERSION=${napi_build_version})
 ENDIF()
 
-IF (WIN32)
+IF (MSVC)
     # Change runtime library to MD
     set(CMAKE_CXX_FLAGS_RELEASE "/MD")
     set(CMAKE_CXX_FLAGS_DEBUG "/MDd")
