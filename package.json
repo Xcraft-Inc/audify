@@ -6,7 +6,7 @@
 	"types": "index.d.ts",
 	"scripts": {
 		"docs": "typedoc index.d.ts --hideGenerator --name Audify.js",
-		"rebuild": "cmake-js compile",
+		"rebuild": "cross-env-shell \"cmake-js compile -G \\\"$XCRAFT_CMAKE_GENERATOR\\\"\"",
 		"install": "prebuild-install -r napi || npm run rebuild",
 		"deploy": "np --yolo",
 		"build-binaries": "run-script-os",
@@ -51,6 +51,7 @@
 	"dependencies": {
 		"bindings": "^1.5.0",
 		"cmake-js": "github:Xcraft-Inc/cmake-js",
+		"cross-env": "^10.1.0",
 		"node-abi": "^4.12.0",
 		"node-addon-api": "^8.5.0",
 		"prebuild-install": "^7.1.3"
