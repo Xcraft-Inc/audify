@@ -50,7 +50,7 @@
 	"homepage": "https://github.com/almoghamdani/audify#readme",
 	"dependencies": {
 		"bindings": "^1.5.0",
-		"cmake-js": "^7.3.1",
+		"cmake-js": "github:Xcraft-Inc/cmake-js",
 		"node-abi": "^4.12.0",
 		"node-addon-api": "^8.5.0",
 		"prebuild-install": "^7.1.3"
