@@ -48,8 +48,6 @@ function(get_package_version PACKAGE_VERSION PROJECT_VERSION)
                    OPUS_PACKAGE_VERSION
                    ${OPUS_PACKAGE_VERSION})
       message(STATUS "Opus package version from package_version file: ${OPUS_PACKAGE_VERSION}")
-  else()
-    set(OPUS_PACKAGE_VERSION, "1.5.2")
   endif()
 
   if(OPUS_PACKAGE_VERSION)
