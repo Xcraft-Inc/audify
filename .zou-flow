@@ -1,2 +1,5 @@
 [select]
 	exclude = vendor/rtaudio
+[update-version]
+	package-json = package.json
+	package-lock = package-lock.json
