@@ -44,7 +44,8 @@
             }, {
               "defines": [
                 "__WINDOWS_WASAPI__",
-                "<!@(echo ✓ Windows WASAPI enabled (MSVC) >&2 && echo)"
+                "__WINDOWS_DS__",
+                "<!@(echo ✓ Windows WASAPI and DirectSound enabled (MSVC) >&2 && echo)"
               ],
               "libraries": [
                 "winmm.lib",
@@ -52,16 +53,8 @@
                 "ksuser.lib",
                 "mfplat.lib",
                 "mfuuid.lib",
-                "wmcodecdspuuid.lib"
-              ],
-              "conditions": [
-                ["<!(if exist \"%WindowsSdkDir%Include\\%WindowsSDKVersion%um\\dsound.h\" (echo 1) else (echo 0))==1", {
-                  "defines": [
-                    "__WINDOWS_DS__",
-                    "<!@(echo ✓ Windows DirectSound enabled >&2 && echo)"
-                  ],
-                  "libraries": ["dsound.lib"]
-                }]
+                "wmcodecdspuuid.lib",
+                "dsound.lib"
               ]
             }]
           ]
