@@ -1,6 +1,6 @@
 {
-	"name": "audify",
-	"version": "1.10.1",
+	"name": "xcraft-audify",
+	"version": "2.0.0",
 	"description": "Play/Stream/Record PCM audio data",
 	"main": "index.js",
 	"scripts": {
@@ -18,7 +18,6 @@
 		"alsa",
 		"jack",
 		"pulseaudio",
-		"oss",
 		"coreaudio",
 		"asio",
 		"wasapi",
@@ -33,22 +32,21 @@
 		"headphones"
 	],
 	"author": "Almog Hamdani",
+	"contributors": [
+		"Mathieu Schroeter <schroeter@epsitec.ch>"
+	],
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/almoghamdani/audify/issues"
+		"url": "https://github.com/Xcraft-Inc/audify/issues"
 	},
-	"homepage": "https://github.com/almoghamdani/audify#readme",
+	"homepage": "https://github.com/Xcraft-Inc/audify#readme",
 	"dependencies": {
 		"bindings": "^1.5.0",
 		"node-abi": "^4.12.0",
 		"node-addon-api": "^8.5.0"
 	},
 	"devDependencies": {
-		"@types/node": "^24.3.0",
-		"node-gyp": "^12.1.0",
-		"np": "^10.2.0",
-		"prebuild": "^13.0.1",
-		"run-script-os": "^1.1.6"
+		"node-gyp": "^12.1.0"
 	},
 	"binary": {
 		"napi_versions": [
