@@ -21,7 +21,7 @@
           "msvs_settings": {
             "VCCLCompilerTool": {
               "ExceptionHandling": 1,
-              "AdditionalOptions": ["/std:c++17", "/EHsc"]
+              "AdditionalOptions": ["/EHsc"]
             }
           },
           "conditions": [
@@ -98,7 +98,7 @@
           ],
           "xcode_settings": {
             "GCC_ENABLE_CPP_EXCEPTIONS": "YES",
-            "OTHER_CPLUSPLUSFLAGS": ["-std=c++17", "-pthread"]
+            "OTHER_CPLUSPLUSFLAGS": ["-pthread"]
           },
           "link_settings": {
             "libraries": [
