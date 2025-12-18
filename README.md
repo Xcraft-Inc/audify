@@ -1,63 +1,35 @@
-[![npm version](https://badge.fury.io/js/audify.svg)](https://www.npmjs.com/package/audify)
-[![Master Build Status](https://github.com/almoghamdani/audify/actions/workflows/commit-build.yml/badge.svg?branch=master)](https://github.com/almoghamdani/audify/actions/workflows/commit-build.yml)
-[![Prebuilt Build Status](https://github.com/almoghamdani/audify/actions/workflows/deploy-build.yml/badge.svg)](https://github.com/almoghamdani/audify/actions/workflows/deploy-build.yml)
+# Xcraft Audify.js (FORK of Audify.js)
 
-# Audify.js
+Xcraft Audify.js - Play/Stream/Record PCM audio data &amp; Encode/Decode Opus to PCM audio data
 
-Audify.js - Play/Stream/Record PCM audio data &amp; Encode/Decode Opus to PCM audio data
+This project is a **fork** of https://github.com/almoghamdani/audify where the usual node-gyp is used instead of CMake, libopus has been dropped and some backends are not compiled.
 
 ## Features
 
-- Encode 16-bit integer PCM or floating point PCM to Opus packet using C++ Opus library.
-- Decode Opus packets to 16-bit integer PCM or floating point PCM using C++ Opus library.
-- Complete API for realtime audio input/output across Linux (native ALSA, JACK, PulseAudio and OSS), Macintosh OS X (CoreAudio and JACK), and Windows (DirectSound, ASIO and WASAPI) operating systems using C++ RtAudio library.
+- Complete API for realtime audio input/output across Linux (native ALSA and PulseAudio), Macintosh OS X (CoreAudio), and Windows (DirectSound and WASAPI) operating systems using C++ RtAudio library.
 
 ## Installation
 
 ```
-npm install audify
+npm install xcraft-audify
 ```
-
-**_Most regular installs will support prebuilds that are built with each release._**
-
-**_Prebuilds are available for Node/Electron versions that support N-API 5-9._**
 
 #### Requirements for source build
 
-- Node or Electron versions that support N-API 5 and up ([N-API Node Version Matrix](https://nodejs.org/docs/latest/api/n-api.html#node-api-version-matrix))
-- [CMake](http://www.cmake.org/download/)
+- Node or Electron versions that support N-API 5 and up ([N-API Node Version Matrix](https://nodejs.org/docs/latest/api/
 - A proper C/C++ compiler toolchain of the given platform
   - **Windows**:
     - [Visual C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) or a recent version of Visual C++ will do ([the free Community](https://www.visualstudio.com/products/visual-studio-community-vs) version works well)
+    - MingW64
   - **Unix/Posix**:
     - Clang or GCC
-    - Ninja or Make (Ninja will be picked if both present)
 
 ## Example
-
-#### Opus Encode & Decode
-
-```javascript
-const { OpusEncoder, OpusDecoder, OpusApplication } = require("audify");
-
-// Init encoder and decoder
-// Sample rate is 48kHz and the amount of channels is 2
-// The opus coding mode is optimized for audio
-const encoder = new OpusEncoder(48000, 2, OpusApplication.OPUS_APPLICATION_AUDIO);
-const decoder = new OpusDecoder(48000, 2);
-
-const frameSize = 1920; // 40ms
-const buffer = ...
-
-// Encode and then decode
-var encoded = encoder.encode(buffer, frameSize);
-var decoded = decoder.decode(encoded, frameSize);
-```
 
 #### Record audio and play it back realtime
 
 ```javascript
-const { RtAudio, RtAudioFormat } = require("audify");
+const { RtAudio, RtAudioFormat } = require("xcraft-audify");
 
 // Init RtAudio instance using default sound API
 const rtAudio = new RtAudio(/* Insert here specific API if needed */);
@@ -84,10 +56,6 @@ rtAudio.openStream(
 // Start the stream
 rtAudio.start();
 ```
-
-## Documentation
-
-Full documentation available [here](https://almoghamdani.github.io/audify/).
 
 ## Legal
 
