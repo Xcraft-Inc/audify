@@ -16,47 +16,25 @@
       "defines": ["NAPI_ENABLE_CPP_EXCEPTIONS", "NODE_ADDON_API_CPP_EXCEPTIONS"],
       "conditions": [
         ["OS=='win'", {
-          "defines": [],
-          "cflags_cc": ["-fexceptions"],
           "msvs_settings": {
             "VCCLCompilerTool": {
               "ExceptionHandling": 1,
               "AdditionalOptions": ["/EHsc"]
             }
           },
-          "conditions": [
-            ["<!(echo %CXX% 2>nul | findstr /i \"g++\" >nul 2>&1 && echo 1 || echo 0)==1", {
-              "defines": [
-                "__WINDOWS_WASAPI__",
-                "__WINDOWS_DS__",
-                "<!@(echo ✓ Windows WASAPI and DirectSound enabled (MinGW) >&2 && echo)"
-              ],
-              "libraries": [
-                "-lwinmm",
-                "-lole32",
-                "-lksuser",
-                "-lmfplat",
-                "-lmfuuid",
-                "-lwmcodecdspuuid",
-                "-ldsound",
-                "-lpthread"
-              ]
-            }, {
-              "defines": [
-                "__WINDOWS_WASAPI__",
-                "__WINDOWS_DS__",
-                "<!@(echo ✓ Windows WASAPI and DirectSound enabled (MSVC) >&2 && echo)"
-              ],
-              "libraries": [
-                "winmm.lib",
-                "ole32.lib",
-                "ksuser.lib",
-                "mfplat.lib",
-                "mfuuid.lib",
-                "wmcodecdspuuid.lib",
-                "dsound.lib"
-              ]
-            }]
+          "defines": [
+            "__WINDOWS_WASAPI__",
+            "__WINDOWS_DS__",
+            "<!@(echo ✓ Windows WASAPI and DirectSound enabled (MSVC) >&2 && echo)"
+          ],
+          "libraries": [
+            "winmm.lib",
+            "ole32.lib",
+            "ksuser.lib",
+            "mfplat.lib",
+            "mfuuid.lib",
+            "wmcodecdspuuid.lib",
+            "dsound.lib"
           ]
         }],
         ["OS=='linux'", {
